@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './LoginCard.css';
 
-const LoginCard = () => {
+const LoginCard = ({ onLogin }) => {
     const [activeTab, setActiveTab] = useState('login');
     const [showPassword, setShowPassword] = useState(false);
 
@@ -28,7 +28,7 @@ const LoginCard = () => {
                     </button>
                 </div>
 
-                <form className="login-form">
+                <form className="login-form" onSubmit={onLogin}>
                     <div className="form-group">
                         <label>Email Address</label>
                         <div className="input-wrapper">
