@@ -82,6 +82,21 @@ const Navbar = () => {
                                 <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
                             </svg>
                         </button>
+                        <button
+                            className="btn-logout"
+                            onClick={() => {
+                                localStorage.removeItem('access_token');
+                                localStorage.removeItem('refresh_token');
+                                window.location.href = '/';
+                            }}
+                            title="Logout"
+                        >
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                <polyline points="16 17 21 12 16 7"></polyline>
+                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                        </button>
                         <Link to="/profile">
                             <img
                                 src={user?.profile_picture || `https://ui-avatars.com/api/?name=${user?.username || 'User'}&background=random`}

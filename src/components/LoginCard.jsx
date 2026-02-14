@@ -122,7 +122,7 @@ const LoginCard = ({ onLogin }) => {
                     <form className="login-form" onSubmit={handleSubmit}>
                         {error && <div className="error-message">{error}</div>}
 
-                        {/* Email/Username Field */}
+
                         <div className="form-group">
                             <label>EMAIL ADDRESS</label>
                             <div className="input-wrapper">
@@ -144,7 +144,7 @@ const LoginCard = ({ onLogin }) => {
                             </div>
                         </div>
 
-                        {/* Email field for signup */}
+                        {/* Email field for signup
                         {activeTab === 'signup' && (
                             <div className="form-group">
                                 <label>EMAIL ADDRESS</label>
@@ -166,7 +166,7 @@ const LoginCard = ({ onLogin }) => {
                                     />
                                 </div>
                             </div>
-                        )}
+                        )} */}
 
                         {/* Password Field */}
                         <div className="form-group">

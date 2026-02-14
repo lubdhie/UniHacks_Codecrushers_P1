@@ -10,9 +10,7 @@ const EditProfile = () => {
     const [formData, setFormData] = useState({
         full_name: '',
         job_title: '',
-        location: '',
         bio: '',
-        website: '',
         profile_picture: '',
         cover_image: '',
         is_visible: true
@@ -32,9 +30,7 @@ const EditProfile = () => {
                     setFormData({
                         full_name: user.full_name || '',
                         job_title: user.job_title || '',
-                        location: user.location || '',
                         bio: user.bio || '',
-                        website: user.website || '',
                         profile_picture: user.profile_picture || '',
                         cover_image: user.cover_image || '',
                         is_visible: user.is_visible !== false
@@ -152,30 +148,7 @@ const EditProfile = () => {
                             </span>
                         </div>
 
-                        <div className="form-row">
-                            <div className="edit-form-group">
-                                <label>Location</label>
-                                <input
-                                    type="text"
-                                    name="location"
-                                    className="edit-input"
-                                    placeholder="San Francisco, CA"
-                                    value={formData.location}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className="edit-form-group">
-                                <label>Website / Social Link</label>
-                                <input
-                                    type="url"
-                                    name="website"
-                                    className="edit-input"
-                                    placeholder="https://alexsterling.design"
-                                    value={formData.website}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                        </div>
+
 
                         <div className="visibility-section">
                             <div className="visibility-info">

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import api from '../api';
 import ProfileHeader from "./ProfileHeader";
@@ -74,8 +75,14 @@ const Profile = () => {
         full_name: "Alexander Sterling",
         job_title: "Lead Product Architect",
         bio: "Building scalable infrastructure for the next generation of creative collaboration tools. Passionate about minimalist design and cloud systems.",
-        location: "San Francisco, CA",
-        website: "https://alexsterling.design"
+        join_date: new Date().toISOString()
+    };
+
+    // Format join date
+    const formatJoinDate = (dateString) => {
+        if (!dateString) return "Recently joined";
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
     };
 
     const statsData = [
@@ -92,34 +99,35 @@ const Profile = () => {
                     <ProfileHeader user={activeUser} />
 
                     <div className="profile-card-content">
-                        <div className="profile-field-group">
-                            <label className="field-label">Bio</label>
-                            <div className="bio-container-new">
-                                <p className="bio-text-new">{activeUser.bio || "Building scalable infrastructure for the next generation of creative collaboration tools. Passionate about minimalist design and cloud systems."}</p>
-                                <span className="char-count">{(activeUser.bio?.length || 128)} / 200</span>
+                        <div className="profile-info-section">
+                            <div className="profile-info-header">
+                                <h3>About</h3>
+                                <Link to="/profile/edit" className="btn-edit-profile">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                    Edit Profile
+                                </Link>
                             </div>
-                        </div>
 
-                        <div className="profile-two-col">
                             <div className="profile-field-group">
-                                <label className="field-label">Location</label>
-                                <div className="field-input-mock">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A0AEC0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                                    <span>{activeUser.location || "San Francisco, CA"}</span>
+                                <label className="field-label">Bio</label>
+                                <p className="field-value">{activeUser.bio || "No bio added yet."}</p>
+                            </div>
+
+                            <div className="profile-field-group">
+                                <label className="field-label">Member Since</label>
+                                <div className="field-value-with-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2AB1C5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    </svg>
+                                    <span>{formatJoinDate(activeUser.join_date)}</span>
                                 </div>
                             </div>
-                            <div className="profile-field-group">
-                                <label className="field-label">Website / Social Link</label>
-                                <div className="field-input-mock">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A0AEC0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                                    <span>{activeUser.website || "https://alexsterling.design"}</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="profile-card-footer">
-                            <button className="btn-save-new">Save Changes</button>
-                            <button className="btn-cancel-new">Cancel</button>
                         </div>
                     </div>
                 </div>
