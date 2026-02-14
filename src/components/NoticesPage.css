@@ -1,0 +1,160 @@
+.notices-page {
+    min-height: 100vh;
+    background-color: #f0f7ff;
+    padding-top: 100px;
+}
+
+.notices-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 50px;
+}
+
+.notices-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.notices-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0 0 8px;
+}
+
+.notices-header p {
+    color: #718096;
+    font-size: 1rem;
+}
+
+.notices-loading,
+.notices-empty {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.notices-empty svg {
+    margin-bottom: 20px;
+}
+
+.notices-empty h3 {
+    font-size: 1.3rem;
+    color: #4a5568;
+    margin: 0 0 8px;
+}
+
+.notices-empty p {
+    color: #a0aec0;
+    margin: 0;
+}
+
+.notices-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.notice-item {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    transition: all 0.2s;
+    border-left: 4px solid transparent;
+}
+
+.notice-item:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.notice-item.latest {
+    background: linear-gradient(135deg, #fff5f0 0%, #ffffff 100%);
+    border-left-color: #ff7e33;
+}
+
+.notice-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #ff7e33 0%, #ff9955 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.notice-item:not(.latest) .notice-icon {
+    background: linear-gradient(135deg, #2AB1C5 0%, #3bc9dd 100%);
+}
+
+.notice-content {
+    flex: 1;
+    position: relative;
+}
+
+.notice-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    gap: 16px;
+}
+
+.notice-content h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0;
+}
+
+.notice-time {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    white-space: nowrap;
+}
+
+.notice-content p {
+    color: #4a5568;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.new-badge {
+    display: inline-block;
+    background: #ff7e33;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-top: 12px;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 640px) {
+    .notices-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .notice-item {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .notice-header-row {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .notice-time {
+        align-self: flex-start;
+    }
+}
