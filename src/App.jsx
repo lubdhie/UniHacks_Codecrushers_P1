@@ -8,6 +8,7 @@ import Profile from './components/Profile'
 import EditProfile from './components/EditProfile'
 import AdminPage from './components/AdminPage'
 import NoticesPage from './components/NoticesPage'
+import ProjectsPage from './components/ProjectsPage'
 import './App.css'
 
 function App() {
@@ -50,6 +51,10 @@ function App() {
             <Route
               path="/notices"
               element={token ? <NoticesPage /> : <Navigate to="/" />}
+            />
+            <Route
+              path="/projects"
+              element={token ? <ProjectsPage /> : <Navigate to="/" />}
             />
             {/* Fallback */}
             <Route path="*" element={<Navigate to="/" />} />
