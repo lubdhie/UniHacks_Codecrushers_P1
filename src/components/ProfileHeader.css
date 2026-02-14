@@ -1,0 +1,92 @@
+.profile-header-new {
+    background: white;
+    overflow: hidden;
+}
+
+.cover-section-new {
+    height: 180px;
+    width: 100%;
+}
+
+.cover-img-new {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-identity-section {
+    position: relative;
+    padding: 0 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+}
+
+.avatar-wrapper-new {
+    position: relative;
+    margin-top: -65px;
+    margin-bottom: 12px;
+}
+
+.main-avatar-new {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 6px solid white;
+    background: white;
+    object-fit: cover;
+}
+
+.avatar-edit-icon {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: #2AB1C5;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 3px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-avatar-link {
+    font-size: 0.8rem;
+    color: #2AB1C5;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 24px;
+    align-self: flex-end;
+    margin-top: -105px;
+    /* Offset to align with designer's placement */
+}
+
+.user-info-new {
+    text-align: left;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.user-info-new h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0 0 6px;
+}
+
+.user-role-new {
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin: 0;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .upload-avatar-link {
+        align-self: center;
+        margin-top: 10px;
+    }
+}

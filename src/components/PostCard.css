@@ -1,0 +1,88 @@
+.post-card-item {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.post-header-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.post-avatar-img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-meta-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-weight: 700;
+    color: #2d3748;
+    font-size: 0.95rem;
+}
+
+.post-date {
+    font-size: 0.8rem;
+    color: #a0aec0;
+}
+
+.post-options {
+    color: #a0aec0;
+    cursor: pointer;
+}
+
+.post-body-content {
+    margin-bottom: 20px;
+}
+
+.post-text {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.post-inline-image {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 8px;
+}
+
+.post-actions-bar {
+    display: flex;
+    gap: 20px;
+    border-top: 1px solid #f7fafc;
+    padding-top: 16px;
+}
+
+.post-action-btn {
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #718096;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.post-action-btn:hover {
+    color: #3182ce;
+    background: #ebf8ff;
+}
+
+.post-action-btn.share {
+    margin-left: auto;
+}
